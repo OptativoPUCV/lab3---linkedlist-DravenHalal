@@ -206,3 +206,20 @@ list.c:77:9: error: unused variable ‘nodo’ [-Werror=unused-variable]
 cc1: all warnings being treated as errors
 Compilation failed
 ec0e6ba
+Thu 28 Mar 2024 03:13:04 PM UTC: 
+ list.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:5:
+list.c: In function ‘pushCurrent’:
+list.c:78:36: error: ‘return’ with a value, in function returning void [-Werror=return-type]
+   78 |   if(list->current == NULL) return NULL;
+      |                                    ^~~~
+list.c:76:6: note: declared here
+   76 | void pushCurrent(List * list, void * data) {
+      |      ^~~~~~~~~~~
+list.c:77:9: error: unused variable ‘nodo’ [-Werror=unused-variable]
+   77 |   Node *nodo = createNode(data);
+      |         ^~~~
+cc1: all warnings being treated as errors
+Compilation failed
+fd992f8
