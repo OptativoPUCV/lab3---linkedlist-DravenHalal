@@ -40,11 +40,13 @@ List * createList() {
 void * firstList(List * list) {
   if(list == NULL){
     list->head = list->current;
+    return list->head;
   }
-  return list->head->data;
+  return NULL;
 }
 
 void * nextList(List * list) {
+  
     return NULL;
 }
 
