@@ -78,7 +78,7 @@ void pushCurrent(List * list, void * data) {
 }
 
 void * popFront(List * list) {
-
+  return NULL;
 }
 
 void * popBack(List * list) {
