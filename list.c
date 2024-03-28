@@ -42,7 +42,6 @@ void * firstList(List * list) {
     list->head = list->current;
     return list->head;
   }
-  return NULL;
 }
 
 void * nextList(List * list) {
