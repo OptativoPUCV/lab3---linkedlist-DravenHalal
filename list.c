@@ -29,6 +29,7 @@ Node * createNode(void * data) {
 }
 
 List * createList() {
+  //Se crea una lista y se reserva la memoria, se inicializan todos los datos en NULL para que se pueda llena y se devuelve la lista.
   List* lista = (List *)malloc(sizeof(List));
   lista->head = NULL;
   lista->tail = NULL;
@@ -37,7 +38,10 @@ List * createList() {
 }
 
 void * firstList(List * list) {
-    return NULL;
+  if(list == NULL){
+    list->current = list->head;
+  }
+  return list;
 }
 
 void * nextList(List * list) {
