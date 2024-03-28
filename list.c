@@ -46,10 +46,10 @@ void * firstList(List * list) {
 }
 
 void * nextList(List * list) {
-  if(list->current->next == NULL || list->current == NULL) 
+  if(list->current->next == NULL || list == NULL) 
     return NULL;
   else{
-    list->current = list->current->next;
+    list->current = list->current->next->data;
     return list->current->data;
   }
 }
