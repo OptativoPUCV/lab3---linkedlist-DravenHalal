@@ -1,0 +1,15 @@
+Thu 28 Mar 2024 02:24:22 PM UTC: 
+ list.c | 6 +++++-
+ 1 file changed, 5 insertions(+), 1 deletion(-)
+In file included from test.c:5:
+list.c: In function ‘createList’:
+list.c:32:18: error: ‘Lista’ undeclared (first use in this function); did you mean ‘lista’?
+   32 |   List* lista = (Lista *)malloc(sizeof(List));
+      |                  ^~~~~
+      |                  lista
+list.c:32:18: note: each undeclared identifier is reported only once for each function it appears in
+list.c:32:25: error: expected expression before ‘)’ token
+   32 |   List* lista = (Lista *)malloc(sizeof(List));
+      |                         ^
+Compilation failed
+3021cf7
