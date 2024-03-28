@@ -74,8 +74,7 @@ void pushBack(List * list, void * data) {
 }
 
 void pushCurrent(List * list, void * data) {
-  Node *nodo = createNode(data);
-  if(list->current == NULL) return NULL;
+
 }
 
 void * popFront(List * list) {
