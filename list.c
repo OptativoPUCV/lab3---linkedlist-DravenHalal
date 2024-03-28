@@ -78,15 +78,7 @@ void pushCurrent(List * list, void * data) {
 }
 
 void * popFront(List * list) {
-      if (list->head) {
-          Node* temp = list->head;
-          list->head = list->head->next;
-          free(temp);
-          if (!list->head) {
-              list->tail = NULL;
-          }
-      }
-  }
+
 }
 
 void * popBack(List * list) {
