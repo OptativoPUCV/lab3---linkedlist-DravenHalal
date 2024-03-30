@@ -111,7 +111,7 @@ void * popBack(List * list) {
 
 void * popCurrent(List * list) {
       if (list == NULL || list->current == NULL) {
-          return; // La lista está vacía o el current no está establecido
+          return NULL; // La lista está vacía o el current no está establecido
       }
 
       Node *currentNode = list->current;
