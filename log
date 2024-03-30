@@ -508,3 +508,14 @@ Sat 30 Mar 2024 08:15:45 PM UTC:
  tests:  11|1
 total_score: 55/70
 5bd805d
+Sat 30 Mar 2024 08:31:59 PM UTC: 
+ list.c | 7 ++++++-
+ 1 file changed, 6 insertions(+), 1 deletion(-)
+In file included from test.c:5:
+list.c: In function ‘popCurrent’:
+list.c:119:1: error: control reaches end of non-void function [-Werror=return-type]
+  119 | }
+      | ^
+cc1: all warnings being treated as errors
+Compilation failed
+7a84193
