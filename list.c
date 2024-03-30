@@ -116,6 +116,13 @@ void * popCurrent(List * list) {
   if(list->current != NULL){
     list->current->next = aux->next;
   }
+  else{
+    list->head = aux->next;
+  }
+  if(list->current == list->tail){
+    list->tail = list->current;
+  }
+  return aux->data;
 }
 
 void cleanList(List * list) {
