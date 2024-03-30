@@ -115,6 +115,7 @@ void * popCurrent(List * list) {
       }
 
       Node *currentNode = list->current;
+      void *data = currentNode->data;
 
       // Manejo de punteros para conectar los nodos adyacentes al nodo actual
       if (currentNode->prev != NULL) {
@@ -134,6 +135,8 @@ void * popCurrent(List * list) {
 
       // Liberar la memoria del nodo eliminado
       free(currentNode);
+
+      return data;
   }
 
 void cleanList(List * list) {
