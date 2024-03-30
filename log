@@ -546,3 +546,18 @@ list.c:133:1: error: control reaches end of non-void function [-Werror=return-ty
 cc1: all warnings being treated as errors
 Compilation failed
 c75b2aa
+Sat 30 Mar 2024 08:38:58 PM UTC: 
+ list.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:5:
+list.c: In function ‘popCurrent’:
+list.c:132:10: error: ‘data’ undeclared (first use in this function)
+  132 |   return data;
+      |          ^~~~
+list.c:132:10: note: each undeclared identifier is reported only once for each function it appears in
+list.c:133:1: error: control reaches end of non-void function [-Werror=return-type]
+  133 | }
+      | ^
+cc1: all warnings being treated as errors
+Compilation failed
+4a0917d
