@@ -65,7 +65,7 @@ void * lastList(List * list) {
 }
 
 void * prevList(List * list) {
-  if(list->current == NULL || list->head == NULL || list->head->next == NULL) return NULL;
+  if(list->current == NULL || list->current->next == NULL) return NULL;
   list->current = list->head;
   while(list->current->next->next != NULL){
     list->current = list->current->next;
@@ -75,7 +75,13 @@ void * prevList(List * list) {
 }
 
 void pushFront(List * list, void * data) {
-
+  Node* nuevoNodo = (Node *)malloc(sizeof(Node*));
+  if(nuevoNodo == NULL){
+    nuevoNodo->data = data;
+    nuevoNodo->next = list->head;
+    nuevoNodo->prev = NULL;
+    if(list->tail != NULL) list->tail = nuevoNodo;
+  }
   
 }
 
