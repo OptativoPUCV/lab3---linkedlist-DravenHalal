@@ -597,3 +597,17 @@ list.c:107:8: note: declared here
 cc1: all warnings being treated as errors
 Compilation failed
 c1b4202
+Sat 30 Mar 2024 08:40:17 PM UTC: 
+ list.c | 5 +++++
+ 1 file changed, 5 insertions(+)
+In file included from test.c:5:
+list.c: In function ‘popCurrent’:
+list.c:114:11: error: ‘return’ with no value, in function returning non-void [-Werror=return-type]
+  114 |           return; // La lista está vacía o el current no está establecido
+      |           ^~~~~~
+list.c:112:8: note: declared here
+  112 | void * popCurrent(List * list) {
+      |        ^~~~~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+3a96398

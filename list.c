@@ -105,6 +105,11 @@ void * popFront(List * list) {
 }
 
 void * popBack(List * list) {
+    list->current = list->tail;
+    return popCurrent(list);
+}
+
+void * popCurrent(List * list) {
       if (list == NULL || list->current == NULL) {
           return; // La lista está vacía o el current no está establecido
       }
