@@ -105,29 +105,31 @@ void * popFront(List * list) {
 }
 
 void * popBack(List * list) {
-    list->current = list->tail;
-    return popCurrent(list);
-}
+      if (list == NULL || list->current == NULL) {
+          return; // La lista está vacía o el current no está establecido
+      }
 
-void * popCurrent(List * list) {
-  if (list == NULL || list->current == NULL) return NULL;
-  Node *nodo = list->current;
-  if (nodo->prev != NULL) nodo->prev->next = nodo->next;
-  else {
-    list->head = nodo->next;
+      Node *currentNode = list->current;
+
+      // Manejo de punteros para conectar los nodos adyacentes al nodo actual
+      if (currentNode->prev != NULL) {
+          currentNode->prev->next = currentNode->next;
+      } else {
+          list->head = currentNode->next;
+      }
+
+      if (currentNode->next != NULL) {
+          currentNode->next->prev = currentNode->prev;
+      } else {
+          list->tail = currentNode->prev;
+      }
+
+      // Actualizar el current al siguiente nodo
+      list->current = currentNode->next;
+
+      // Liberar la memoria del nodo eliminado
+      free(currentNode);
   }
-
-  if (nodo->next != NULL) nodo->next->prev = nodo->prev;
-  else {
-    list->tail = nodo->prev;
-  }
-
-  // Actualizar el current al siguiente nodo
-  list->current = nodo->next;
-
-  // Liberar la memoria del nodo eliminado
-  free(nodo);
-}
 
 void cleanList(List * list) {
     while (list->head != NULL) {
